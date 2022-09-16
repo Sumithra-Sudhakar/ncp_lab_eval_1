@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Form Validation</title>
+</head>
+<script src="myScript.js"></script>
+<body>
+    <h1>Recommendation</h1>
+
+    <div class="div1">
+        <label for="Name" style="font-weight: bold;">Applicant</label>
+        <div>Sumithra Sudhakar</div>
+
+        <p style="font-weight:bold;">Applying to</p>
+        <p>Stony Brrok University</p> 
+
+        <p style="font-weight:bold;">Recommender</p>
+        <p>Senthilkumar T</p>
+    </div>
+
+   <form name="RegForm" onsubmit="return Validate()" method="post">
+    <h3>Applicant Information</h3>
+    <p style="font-weight:bold;">Applicant Name: Sumithra Sudhakar</p><br>
+    <p> Do you wish to waive right to examine this letter of recommendation?</p>
+    <br><br>
+
+    <div>
+        <input type="checkbox" name="waiveyes" id="waiver" value="yes">
+        <label for="waiveyes">Yes, I wish to waive my right to examine this letter of recommendation.</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" name="waiveno" id="waiver" value="no">
+        <label for="waiveno">No, I do not wish to waive my right to examine this letter of recommendation.</label>
+    </div>
+
+    <h3>Recommendar Information</h3>
+
+    <label for="recommenderprefix">Prefix: </label>
+            <select name="recommenderprefix" id="recommenderprefix">
+                <option value="mr">Mr</option>
+                <option value="dr">Dr</option>
+                <option value="er">Er</option>
+              </select>
+
+<br><br>
+    <label for="FN">First Name</label><br>
+    <input type="text" class="FN" name="FN" id="FN"/><br><br>
+
+    <label for="LN">Last Name</label><br>
+    <input type="text" class="LN" id="LN" name="LN"/><br><br>
+
+    <label for="ORG">Organization</label><br>
+    <input type="text" class="ORG" id="ORG" name="ORG"/><br><br>
+
+    <label for="title">Title</label><br>
+    <input type="text" class="title" id="title" name="title"/><br><br>
+
+    <label for="RTS"> Relationship to Student</label><br>
+    <input type="RTS" class="RTS" id="RTS" name="RTS"/><br><br>
+
+    <label for="phone">Telephone</label><br>
+    <input type="text" id="phone" class="phone" name="phone"/><br><br>
+
+    <label for="email">Email</label><br>
+    <input type="text" name="email" class="email" id="email"/><br><br>
+
+
+    <table>
+        <tr>
+            <th></th>
+            <th>Upper 1% to 2%</th>
+            <th>Upper 10%</th>
+            <th>Upper 25%</th>
+            <th>Upper 50%</th>
+            <th>Lower 50%</th>
+            <th>No basis for judgement</th>
+        </tr>
+        <tr>
+            <td>Academic Performance</td>
+            <td><input type="radio" name="row-1" data-col="1"></td>
+            <td><input type="radio" name="row-1" data-col="2"></td>
+            <td><input type="radio" name="row-1" data-col="3"></td>
+            <td><input type="radio" name="row-1" data-col="4"></td>
+            <td><input type="radio" name="row-1" data-col="5"></td>
+            <td><input type="radio" name="row-1" data-col="6"></td>
+        </tr>
+        <tr>
+            <td>Intellectual Ability</td>
+            <td><input type="radio" name="row-2" data-col="1"></td>
+            <td><input type="radio" name="row-2" data-col="2"></td>
+            <td><input type="radio" name="row-2" data-col="3"></td>
+            <td><input type="radio" name="row-1" data-col="4"></td>
+            <td><input type="radio" name="row-1" data-col="5"></td>
+            <td><input type="radio" name="row-1" data-col="6"></td>
+        </tr>
+        <tr>
+            <td>Ability to express him/herself</td>
+            <td><input type="radio" name="row-3" data-col="1"></td>
+            <td><input type="radio" name="row-3" data-col="2"></td>
+            <td><input type="radio" name="row-3" data-col="3"></td>
+            <td><input type="radio" name="row-1" data-col="4"></td>
+            <td><input type="radio" name="row-1" data-col="5"></td>
+            <td><input type="radio" name="row-1" data-col="6"></td>
+        </tr>
+        <tr>
+            <td>Motication for proposed field of study</td>
+            <td><input type="radio" name="row-3" data-col="1"></td>
+            <td><input type="radio" name="row-3" data-col="2"></td>
+            <td><input type="radio" name="row-3" data-col="3"></td>
+            <td><input type="radio" name="row-1" data-col="4"></td>
+            <td><input type="radio" name="row-1" data-col="5"></td>
+            <td><input type="radio" name="row-1" data-col="6"></td>
+        </tr>
+        </table>
+    <br><br>
+
+    <p> Would you admit the applicant in your department?</p>
+    <input type="radio" name="admit" value="assuredly" id="assuredly"/><label for="assuredly">Assuredly</label> <br><br>
+    <input type="radio" name="admit" value="probably" id="probably"/><label for="probably">Probably</label><br><br>
+    <input type="radio" name="admit" value="possibly" id="possibly"/><label for="possibly">Possibly</label><br><br>
+    <input type="radio" name="admit" value="No" id="No"/><label for="No">No</label><br><br>
+
+<button type="submit" id="submit" class="submit" name="submit">Submit</button>
+
+
+</form>
+<button type="button" id="display" class="display" name="display" onclick=" return Display()">Display</button>
+ 
+<p id="FND"></p>
+ 
+<p id="LND"></p>
+
+ 
+<p id="ORGD"></p> 
+<p id="phoneD"></p>
+<p id="emailD"></p>
+<p id="agree"></p>
+
+</body>
+</html>
